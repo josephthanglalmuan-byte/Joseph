@@ -1,0 +1,347 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #f6f9fc, #eef2ff);
+  color: #222;
+}
+
+/* ================= NAVBAR ================= */
+header {
+  background: linear-gradient(90deg, #4361ee, #7209b7);
+  padding: 15px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  color: white;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+/* NAV underline */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background: linear-gradient(90deg, #ffd60a, #ff006e);
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(67,97,238,0.7), rgba(114,9,183,0.7)),
+              url("https://picsum.photos/1600/900");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 48px;
+  animation: fadeIn 1s ease;
+}
+
+.hero p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* HERO DECOR */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.1);
+  top: -50px;
+  left: -50px;
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, #ff006e, #ff9f1c);
+  bottom: -100px;
+  right: -100px;
+  filter: blur(120px);
+  opacity: 0.5;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(90deg, #ff9f1c, #ff006e);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255,0,110,0.4);
+}
+
+.primary:hover {
+  transform: scale(1.05);
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary:hover {
+  background: white;
+  color: #7209b7;
+}
+
+/* BUTTON SHINE */
+button::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  top: 0;
+  left: -60px;
+  transform: skewX(-30deg);
+}
+
+button:hover::after {
+  left: 120%;
+  transition: 0.6s;
+}
+
+/* ================= SECTION ================= */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* TITLE DECOR */
+.section h2::after {
+  content: "";
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #4361ee, #ff006e);
+  position: absolute;
+  left: 20%;
+  bottom: -10px;
+  border-radius: 5px;
+}
+
+.section h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #ff006e;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  border-radius: 50%;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card h3 {
+  color: #7209b7;
+}
+
+.card span {
+  display: block;
+  margin: 10px 0;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(114,9,183,0.3);
+}
+
+/* CARD GLOW */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, #ff006e, transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 0.3;
+}
+
+/* ================= FEATURES ================= */
+.dark {
+  background: linear-gradient(120deg, #3a0ca3, #4361ee);
+  color: white;
+}
+
+.feature {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+  position: relative;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+/* FEATURE LINE */
+.feature::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  background: #ff9f1c;
+  transition: 0.4s;
+}
+
+.feature:hover::after {
+  width: 100%;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ================= CTA ================= */
+.cta {
+  background: linear-gradient(90deg, #ff006e, #ff9f1c);
+  color: white;
+  text-align: center;
+  padding: 60px;
+}
+
+.cta button {
+  margin-top: 15px;
+  background: white;
+  color: #ff006e;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #111;
+  color: #bbb;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #ff006e, #4361ee, #ff9f1c);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
